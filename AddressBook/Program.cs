@@ -13,8 +13,9 @@ class Program
 
             Console.WriteLine("1) Add a new contact to address book");
             Console.WriteLine("2) Display address book");
-            Console.WriteLine("3) Edit existing contact using person's first name ");
-            Console.WriteLine("4) Exit");
+            Console.WriteLine("3) Edit existing contact using persons first_name ");
+            Console.WriteLine("4) Delete existing contact using persons first_name ");
+            Console.WriteLine("5) Exit");
 
             choice = int.Parse(Console.ReadLine());
 
@@ -34,13 +35,20 @@ class Program
                     persongetDetail.EditAddressBook(firstname);
                     break;
                 case 4:
-                    Console.WriteLine("Exit");
+                    Console.WriteLine("Enter first name");
+                    firstname = Console.ReadLine();
+                    persongetDetail.DeleteAddressBook(firstname);
+                    break;
+                case 5:
+                    Console.WriteLine("Thank you");
+                    break;
+                case 6:
+                    Console.WriteLine("Enter valid choice");
                     break;
             }
-        } while (choice != 4);
+        } while (choice != 5);
+
 
     }
 }
-
-
 
